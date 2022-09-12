@@ -11,6 +11,9 @@ class MyApp:Application() {
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
+
+        //practice set
+        createDemoNotification()
     }
 
     private fun createNotificationChannel() {
@@ -22,6 +25,19 @@ class MyApp:Application() {
             )
             channel.description="This is used for increment counter notification."
 
+            val notificationManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun createDemoNotification(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            val channel= NotificationChannel(
+                getString(R.string.Demo_Notification_ID),
+                "Demo Channel",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            channel.description="This is a demo channel to work on notifications."
             val notificationManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }

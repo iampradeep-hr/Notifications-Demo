@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Notifications Demo</string>
+
+
+    <string name="Demo_Notification_ID">1654</string>
+
 </resources>
