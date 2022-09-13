@@ -49,18 +49,14 @@ class DemoNotifications(private val context: Context) {
     }
 
     fun showImageNotification(title:String,body:String){
-
         val intent= Intent(context,MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-
         val pendingIntent= PendingIntent.getActivity(
             context,
             2,
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-
-
 
         val bigPictureBitmap = ContextCompat.getDrawable(context, R.drawable.wojak)?.toBitmap()
         val bigLargeIconBitmap = ContextCompat.getDrawable(context, R.drawable.wojak)?.toBitmap()
@@ -69,10 +65,6 @@ class DemoNotifications(private val context: Context) {
             .setSummaryText("Foo summary text")
             .bigLargeIcon(bigLargeIconBitmap)
             .bigPicture(bigPictureBitmap)
-
-
-
-
 
 
         val notification=NotificationCompat

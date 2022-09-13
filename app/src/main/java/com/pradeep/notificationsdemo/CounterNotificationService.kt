@@ -31,7 +31,6 @@ class CounterNotificationService(
         )
 
 
-
         val notification=NotificationCompat.Builder(context, COUNTER_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_burger)
             .setContentTitle("How many Burgers did you have?")
